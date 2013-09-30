@@ -23,6 +23,11 @@ describe "Project Listing" do
 			page.should have_content("Project 3")
 			expect(page).to have_content("Project 3")
 
+			click_link('Project 1')
+
+			expect(current_path).to eq(project_path(project1))
+			page.should have_selector('h1:first', text: project1.title)
+
 		end
 
 		it "should display the navigation" do
@@ -38,7 +43,10 @@ describe "Project Listing" do
 
 			page.should have_selector('.navbar ul li.active a', text: "Projects")
 			expect(page).to have_selector('.navbar ul li.active a', text: "Projects")
+
 		end
 	end
 end
+		
+	
 
