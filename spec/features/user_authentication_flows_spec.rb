@@ -44,5 +44,38 @@ describe "User Authentication" do
     		have_content("Try again")
     	end
     end
+
+    it "should successfully log in" do
+    	visit '/'
+    	find('.navbar').has_no_link?('Logout').should be_true
+    	user = setup_signed_in_user
+    	find('.navbar').has_link?('Logout').should be_true
+    end
+
+    it "should unsuccesfully log in" do
+    	visit '/session/new'
+
+    	fill_in "email", with: "a@b.com"
+    	fill_in "password", with: "invalid creds"
+    	click_button "Login"
+
+    	expect(current_path).to eq(session_path)
+
+    	page.should have_content('Invalid')
+    	expect(page).to have_content('Invalid')
+    end
+    
+    it "should successfully logout" do
+    	user = setup_signed_in_user
+
+    	visit '/'
+
+    	find('.navbar').click_link 'Logout'
+
+    	page.should have_content("Bye")
+    	expect(page).to have_content("Bye")
+
+    	find('.navbar').has_no_link?('Logout')
+    end
   end
 end
