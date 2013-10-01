@@ -8,4 +8,5 @@ class Project < ActiveRecord::Base
  	validates :goal, presence: true, numericality: {greater_than: 0, allow_blank: true}
 
  	has_many :pledges
+ 	has_many :users, through: :pledges
 end
