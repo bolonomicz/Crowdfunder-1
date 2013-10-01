@@ -9,6 +9,10 @@ Crowdfunder::Application.routes.draw do
   end
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, except: :index
+
+  namespace :my do 
+    resources :projects # => My::ProjectsController
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
