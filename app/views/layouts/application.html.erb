@@ -8,6 +8,14 @@
 </head>
 <body>
 <%= render 'layouts/shared/nav' %>
+<div class="flash">
+	<% if flash[:alert] %>
+    <p id="alert" class="alert alert-block"><%= flash[:alert] %></p>
+  <% end %>
+  <% if flash[:success] %>
+    <p id="success" class="alert success-block"><%= flash[:success] %></p>
+  <% end %>
+</div>
 
 <div class="container">
 	<%= yield %>
