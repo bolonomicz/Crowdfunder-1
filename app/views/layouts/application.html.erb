@@ -10,10 +10,10 @@
 <%= render 'layouts/shared/nav' %>
 <div class="flash">
 	<% if flash[:alert] %>
-    <p id="alert" class="alert alert-block"><%= flash[:alert] %></p>
+    <p id="alert" class="alert alert-error"><%= flash[:alert] %></p>
   <% end %>
-  <% if flash[:success] %>
-    <p id="success" class="alert success-block"><%= flash[:success] %></p>
+  <% if flash[:notice] %>
+    <p id="success" class="alert success-block"><%= flash[:notice] %></p>
   <% end %>
 </div>
 
