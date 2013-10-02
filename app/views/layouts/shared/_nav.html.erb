@@ -17,10 +17,10 @@
             <li class="divider-vertical"></li>
             <li class="<%= 'active' if @nav == :my_projects %>">
               <%= link_to 'My Projects', [:my, :projects] %>
-            <li>
+            </li>
             <li class="<%= 'active' if @nav == :new_my_project %>">
               <%= link_to 'New Projects', [:new, :my, :project] %>
-            <li>  
+            </li>  
           <% end %>
         </ul>
       </div>

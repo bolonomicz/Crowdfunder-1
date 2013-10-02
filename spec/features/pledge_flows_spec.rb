@@ -16,7 +16,7 @@ describe "Pledge Listing" do
       expect(page).to have_content("Please login first.")
     end
 
-    it "authenticated user can pledge valid amount" do 
+    it "should let anauthenticated user can pledge valid amount" do 
       user = setup_signed_in_user
 
       visit project_path(@project)
@@ -47,8 +47,8 @@ describe "Pledge Listing" do
       pledge.amount.should == 100
       expect(pledge.amount).to eq(100)    
 
-      # last_email.to.should == [@project.user.email]
-      # expect(last_email.to).to eq([@project.user.email])
+       last_email.to.should == [@project.user.email]
+       expect(last_email.to).to eq([@project.user.email])
     end
   end
 end
