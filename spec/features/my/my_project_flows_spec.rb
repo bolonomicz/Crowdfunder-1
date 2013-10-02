@@ -46,7 +46,6 @@ describe "Project Listing" do
 
     it "should make projects public" do
       me = setup_signed_in_user
-      # If we don't specify a user, it will needlessly CREATE a new one
       project = FactoryGirl.build(:project, user: me)
 
       visit 'my/projects/new'
