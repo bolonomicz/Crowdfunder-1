@@ -1,0 +1,8 @@
+<%= form_for [:my, @project, @image] do |f| %>
+  
+  <p>
+  	<%= f.label :file %>
+    <%= f.file_field :file %>
+  </p>
+  <p><%= f.submit "Upload Image"%></p>
+<% end %>

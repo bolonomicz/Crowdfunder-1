@@ -25,6 +25,7 @@ end
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
+gem 'carrierwave'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -39,7 +40,7 @@ gem 'kaminari-bootstrap'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
 
 group :tools do
   gem 'guard-rspec' # automatically runs our tests whenever there have been changes made to them

@@ -1,0 +1,7 @@
+<div class="images">
+	<% @images.each do |image| %>
+	<div class="image"><%= image_tag image %></div>
+	<% end %>
+</div>
+
+<%= render 'form' %>

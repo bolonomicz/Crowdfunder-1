@@ -4,9 +4,6 @@
       <a class="brand" href="#">CrowdFunder</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="<%= 'active' if current_page? root_path %>">
-            <%= link_to 'Home', :root %>
-          </li>
           <li class="<%= 'active' if @nav == :home %>">
             <%= link_to 'Home', :root %>
           </li>

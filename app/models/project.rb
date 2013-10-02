@@ -9,6 +9,7 @@ class Project < ActiveRecord::Base
 
  	has_many :pledges
  	has_many :users, through: :pledges
+ 	has_many :images, dependent: :destroy
 
  	paginates_per 8
 end

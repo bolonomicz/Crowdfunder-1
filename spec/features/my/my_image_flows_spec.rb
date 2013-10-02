@@ -25,7 +25,9 @@ describe "Images" do
 	 		expect(page).to have_selector('.image', count: 1)
 	 	end
 
-	 	it "should fail to upload an image for my project" do
+	 	it "should fail to upload an image for my project", :focus => true do
+
+
 	 		visit my_project_images_path(@project)
 
 	 		path = File.join(Rails.root, 'app', 'assets', 'javascripts', 'application.js')

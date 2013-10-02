@@ -11,8 +11,14 @@ Crowdfunder::Application.routes.draw do
   resources :users, except: :index
 
   namespace :my do 
-    resources :projects # => My::ProjectsController
+    resources :projects do # => My::ProjectsController
+      resources :images
+    end # => My::ImagesController
   end
+
+  # namespace :my do 
+    
+  # end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
