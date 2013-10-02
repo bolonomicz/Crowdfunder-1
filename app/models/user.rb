@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
 
 	has_many :projects  
   has_many :pledges
+
+  def name
+  	return "#{first_name} #{last_name}"
+  end
 end
