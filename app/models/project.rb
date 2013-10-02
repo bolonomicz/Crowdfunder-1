@@ -10,6 +10,29 @@ class Project < ActiveRecord::Base
  	has_many :pledges
  	has_many :users, through: :pledges
  	has_many :images, dependent: :destroy
+ 	has_many :supporters, :through => :pledges, :source => :user
+
 
  	paginates_per 8
+
+ 	 def raised
+    self.pledges.sum(:amount)
+  end
+
+  def percent_raised
+    ((raised.to_f / goal) * 100).to_i
+  end
+
+  def succeeded?
+    percent_raised >= 100
+  end
+
+  def surpassed_goal?
+    percent_raised > 100
+  end
+
+  def number_of_supporters
+    self.supporters.uniq.count
+	end
 end
+
