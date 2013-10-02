@@ -60,5 +60,23 @@ describe "Project Listing" do
 
       expect(current_path).to eq(my_projects_path)
     end
+
+    it "should display navigation" do 
+      user = setup_signed_in_user
+
+      visit '/'
+
+      page.find('.navbar ul').click_link('My Projects')
+      expect(current_path).to eq(my_projects_path)
+
+      
+      expect(find('.navbar ul li.active a').text).to eq("My Projects")
+      expect(page).to have_selector('.navbar ul li.active a', count: 1)
+
+      
+      click_link 'New Project'
+      expect(current_path).to eq(new_my_project_path)
+      expect(find('.navbar ul li.active a').text).to eq("My Projects")
+    end
   end
 end
