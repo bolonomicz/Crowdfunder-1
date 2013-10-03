@@ -24,7 +24,7 @@ end
 
 gem 'jquery-rails'
 gem 'kaminari'
-gem 'kaminari-bootstrap'
+#gem 'kaminari-bootstrap'
 gem 'carrierwave'
 
 # To use ActiveModel has_secure_password

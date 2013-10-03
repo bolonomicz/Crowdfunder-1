@@ -1,11 +1,14 @@
 <h1>Listing projects</h1>
-<div class="row">
-	<% @projects.each do |project| %>
-		<div class="span4">
-	  	<%= render 'project', project: project %>
-  	</div>
- 	<% end %>
-</div>
+<table id="projects">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Teaser</th>
+    </tr>
+    <tbody class="page">
+    	<%= render @projects %>
+  	</tbody>
+  </thead>
 
 
 <%= paginate @projects %>
