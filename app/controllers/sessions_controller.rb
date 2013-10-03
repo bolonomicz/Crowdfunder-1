@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
   	
   	if user = login(params[:email], params[:password])
-  		redirect_to root_url, :notice => "Login successfull"
+  		redirect_to :projects, :notice => "Login successfull"
   	else
   		flash.now.alert = "Invalid"
   	end

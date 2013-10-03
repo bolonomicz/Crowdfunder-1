@@ -1,21 +1,23 @@
-<%= form_for [:my, @project] do |f| %>
+<div class="form new-project span5 offest4">
+	<%= form_for [:my, @project] do |f| %>
 
-	<%= f.label :title %>
-	<%= f.text_field :title %>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
 
-	<%= f.label :teaser %>
-	<%= f.text_field :teaser %>
+		<%= f.label :teaser %>
+		<%= f.text_field :teaser %>
 
-	<%= f.label :description %>
-	<%= f.text_area :description %>
-	
-	<%= f.label :goal %>
-	<%= f.number_field :goal %>
+		<%= f.label :description %>
+		<%= f.text_area :description, rows: 3  %>
+		
+		<%= f.label :goal %>
+		<%= f.number_field :goal %>
 
-	<% if current_page? new_my_project_path %>
-		<%= f.submit "Publish Project" %>
-	<% else %>
-		<%= f.submit %>
-	<% end %>	
-<% end %>
+		<% if current_page? new_my_project_path %>
+			<%= f.submit "Publish Project" %>
+		<% else %>
+			<%= f.submit %>
+		<% end %>	
+	<% end %>
+</div>
 

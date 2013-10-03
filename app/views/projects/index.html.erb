@@ -1,7 +1,11 @@
 <h1>Listing projects</h1>
+<div class="row">
+	<% @projects.each do |project| %>
+		<div class="span4">
+	  	<%= render 'project', project: project %>
+  	</div>
+ 	<% end %>
+</div>
 
-<% @projects.each do |project| %>
- <%= render 'project', project: project %>
-<% end %>
 
 <%= paginate @projects %>
