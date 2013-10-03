@@ -13,7 +13,7 @@ class Project < ActiveRecord::Base
  	has_many :supporters, :through => :pledges, :source => :user
 
 
- 	paginates_per 8
+ 	paginates_per 9
 
  	 def raised
     self.pledges.sum(:amount)

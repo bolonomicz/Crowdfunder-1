@@ -63,21 +63,21 @@ describe "Project Listing" do
       page.should have_content('Project 49')
       expect(page).to have_content('Project 49')
 
-      page.should have_no_content('Project 41')
-      expect(page).to have_no_content('Project 41')
+      page.should have_no_content('Project 40')
+      expect(page).to have_no_content('Project 40')
 
-      page.should have_selector('li.project', count: 8)
-      expect(page).to have_selector('li.project', count: 8)
+      page.should have_selector('div.project', count: 9)
+      expect(page).to have_selector('div.project', count: 9)
 
       
       page.find('.pagination').click_link '2'
 
       
-      page.should have_content('Project 41')
-      expect(page).to have_content('Project 41')
+      page.should have_content('Project 40')
+      expect(page).to have_content('Project 40')
 
-      page.should have_no_content('Project 32')
-      expect(page).to have_no_content('Project 32')
+      page.should have_no_content('Project 30')
+      expect(page).to have_no_content('Project 30')
     end
 	end
 end
